@@ -6,7 +6,7 @@
 #    By: avallete <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/18 13:18:20 by avallete          #+#    #+#              #
-#    Updated: 2015/02/19 16:59:32 by avallete         ###   ########.fr        #
+#    Updated: 2015/02/20 16:16:45 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,17 +21,18 @@ OBJ=$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INCF=$(addprefix $(INC_PATH), $(INC_NAME))
 INC=$(addprefix -I, $(INC_PATH))
 CC=~/.brew/bin/nasm
+OSNAME=`uname`
 NFLAGS=
 LNKFLAGS=
 
-ifeq ($(UNAME), Linux)
+ifeq (`uname`, Linux)
 	NFLAGS=-f elf64 -p inc/syscall_linux.s
 else
 	NFLAGS=-f macho64 --prefix _
 	LNKFLAGS= -macosx_version_min 10.8 -lSystem
 endif
 SRC_TEST=./test.c
-NAME=test
+NAME=libfts.a
 RED=\033[30;41m
 GREEN=\033[32m
 CYAN=\033[36m
@@ -42,8 +43,8 @@ all: $(NAME)
 
 $(NAME):$(OBJ)
 	@echo "${CYAN}Link all $(NAME)${NC}";
-	@ar rc libftasm.a $(OBJ)
-	@ranlib libftasm.a
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 	@echo "${GREEN}$(NAME) created${NC}";
 
 $(OBJ_PATH)%.o:$(SRC_PATH)%.s
