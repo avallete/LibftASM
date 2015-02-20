@@ -6,12 +6,13 @@
 #    By: avallete <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/18 13:18:20 by avallete          #+#    #+#              #
-#    Updated: 2015/02/20 16:16:45 by avallete         ###   ########.fr        #
+#    Updated: 2015/02/20 18:13:14 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_PATH:=./src/
-SRC_NAME:=ft_bzero.s
+SRC_NAME:=	ft_bzero.s\
+			ft_strcat.s
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.s=.o)
 INC_PATH=./includes/

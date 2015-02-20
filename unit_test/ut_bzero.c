@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ut_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/19 16:52:20 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/20 18:51:08 by avallete         ###   ########.fr       */
+/*   Created: 2015/02/20 17:19:58 by avallete          #+#    #+#             */
+/*   Updated: 2015/02/20 17:20:09 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 
-int main(void)
+void	ut_bzero(void)
 {
-	ut_bzero();
-	ut_strcat();
-	return (0);
+	char test[] = "Voila un jolie test";
+	char test2[] = "Voila un jolie test";
+	NAME_UT("Test ft_bzero");
+	TEST("ft_bzero(str, 5)"), ft_bzero(test, 5);
+	if ((!(*test)) && (!(strcmp(test + 5, " un jolie test"))))
+		OK;
+	else
+		FAIL(test);
+	TEST("ft_bzero(str, 0)"), ft_bzero(test2, 0);
+	if (test2[0] == 'V')
+		OK;
+	else
+		FAIL(test2);
+	TEST("ft_bzero(NULL, 5)"), ft_bzero(NULL, 5);
+	OK;
 }
