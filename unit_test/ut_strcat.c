@@ -34,4 +34,8 @@ void	ut_strcat(void)
 	test_it(str1, "Bonj");
 	TEST("ft_strcat(str1, 'Our')"), ft_strcat(str1, "Our");
 	test_it(str1, "BonjOur");
+	TEST("ft_strcat(NULL, 'Our')"), ft_strcat(NULL, "Our");
+		OK;
+	TEST("ft_strcat(NULL, NULL)"), ft_strcat(NULL, NULL);
+		OK;
 }
