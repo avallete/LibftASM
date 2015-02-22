@@ -25,5 +25,6 @@ int main(void)
 	ut_islower();
 	ut_toupper();
 	ut_tolower();
+	ut_strlen();
 	return (0);
 }
