@@ -12,7 +12,18 @@
 
 SRC_PATH:=./src/
 SRC_NAME:=	ft_bzero.s\
-			ft_strcat.s
+		ft_strcat.s\
+		ft_isdigit.s\
+		ft_isascii.s\
+		ft_isalnum.s\
+		ft_isprint.s\
+		ft_isupper.s\
+		ft_islower.s\
+		ft_toupper.s\
+		ft_tolower.s\
+		ft_strlen.s\
+		ft_memset.s\
+		ft_isalpha.s
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.s=.o)
 INC_PATH=./includes/
@@ -21,17 +32,10 @@ SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ=$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INCF=$(addprefix $(INC_PATH), $(INC_NAME))
 INC=$(addprefix -I, $(INC_PATH))
-CC=~/.brew/bin/nasm
-OSNAME=`uname`
+CC=nasm
+OSNAME:=`uname`
 NFLAGS=
 LNKFLAGS=
-
-ifeq (`uname`, Linux)
-	NFLAGS=-f elf64 -p inc/syscall_linux.s
-else
-	NFLAGS=-f macho64 --prefix _
-	LNKFLAGS= -macosx_version_min 10.8 -lSystem
-endif
 SRC_TEST=./test.c
 NAME=libfts.a
 RED=\033[30;41m
@@ -39,14 +43,22 @@ GREEN=\033[32m
 CYAN=\033[36m
 ORANGE=\033[33m
 NC=\033[0m
-
+#ifeq ($(OSNAME), Linux)
+	NFLAGS=-f elf64
+#else
+#	NFLAGS=-f macho64 --prefix _
+#	LNKFLAGS= -macosx_version_min 10.8 -lSystem
+#endif
 all: $(NAME)
 
 $(NAME):$(OBJ)
+	@echo "${GREEN}OS $(OSNAME) detected${NC}";
+	@echo "${CYAN}Compile $(NAME) with $(CC) and '$(NFLAGS)' ${NC}";
 	@echo "${CYAN}Link all $(NAME)${NC}";
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 	@echo "${GREEN}$(NAME) created${NC}";
+
 
 $(OBJ_PATH)%.o:$(SRC_PATH)%.s
 	@mkdir -p $(OBJ_PATH)

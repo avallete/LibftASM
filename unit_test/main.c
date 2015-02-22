@@ -26,5 +26,6 @@ int main(void)
 	ut_toupper();
 	ut_tolower();
 	ut_strlen();
+	ut_memset();
 	return (0);
 }
