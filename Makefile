@@ -23,6 +23,7 @@ SRC_NAME:=	ft_bzero.s\
 		ft_tolower.s\
 		ft_strlen.s\
 		ft_memset.s\
+		ft_memcpy.s\
 		ft_isalpha.s
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.s=.o)

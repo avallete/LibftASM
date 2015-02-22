@@ -25,7 +25,7 @@ copyrdi:
 
 rditorsi:
 	mov		rax,	[rsi]				;copy char s2 to rax tmp
-	mov		[rdi],	rax				;copy rax tmp in s1
+	mov		[rdi],	rax				;copy char s2 to rax tmp
 	inc		rsi						;s2++
 	inc		rdi						;s1++
 	jmp		copyrdi					;jump begin while

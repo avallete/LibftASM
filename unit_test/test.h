@@ -62,4 +62,5 @@ void	ut_toupper(void);
 void	ut_tolower(void);
 void	ut_strlen(void);
 void	ut_memset(void);
+void	ut_memcpy(void);
 #endif
