@@ -16,5 +16,7 @@ int main(void)
 {
 	ut_bzero();
 	ut_strcat();
+	ut_isdigit();
+	ut_isalpha();
 	return (0);
 }

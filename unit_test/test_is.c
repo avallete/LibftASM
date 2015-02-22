@@ -31,25 +31,39 @@ void	check_isnt(int(*f)(int c), char *str)
 void	test_is(int(*f)(int c), char *str)
 {
 	int i;
+	int ret;
+	int foo;
 
 	i = 0;
+	ret = 0;
+	foo = 0;
 	while (str[i])
 	{
-		f(str[i]) ? OK : FAILIS(str[i]);
+		ret = f(str[i]);
+		if (ret == 0)
+			FAILIS(str[i]), printf("return = %d\n", (f(str[i]))), foo = 1;
 		i++;
 	}
+	if (!foo)
+		OK;
 }
 
 void	test_isnt(int(*f)(int c), char *str)
 {
 	int i;
+	int ret;
+	int foo;
 
 	i = 0;
+	ret = 1;
+	foo = 0;
 	while (str[i])
 	{
-		f(str[i]) ? FAILIS(str[i]) : OK;
+		ret = f(str[i]);
+		if (ret == 1)
+			FAILIS(str[i]), printf("return = %d\n", (f(str[i]))), foo = 1;
 		i++;
 	}
+	if (!foo)
+		OK;
 }
-
-

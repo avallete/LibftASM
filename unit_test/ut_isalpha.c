@@ -10,5 +10,5 @@ void	ut_isalpha(void)
 	check_isnt(isalpha, isnt);
 	NAME_UT("Test ft_isalpha");
 	test_is(ft_isalpha, is);
-	test_is(ft_isalpha, isnt);
+	test_isnt(ft_isalpha, isnt);
 }
