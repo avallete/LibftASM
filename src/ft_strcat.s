@@ -24,9 +24,9 @@ copyrdi:
 	jmp		exit					;go end of exit
 
 rditorsi:
-	mov		rax,	[rsi]			;copy char s2 to rax tmp
+	mov		rax,	[rsi]				;copy char s2 to rax tmp
 	mov		[rdi],	rax				;copy rax tmp in s1
-	mov		rax,	0
+	mov		rax,	0				;reinit rax NULL
 	inc		rsi						;s2++
 	inc		rdi						;s1++
 	jmp		copyrdi					;jump begin while
