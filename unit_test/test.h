@@ -36,6 +36,15 @@ void	check_isnt(int(*f)(int c), char *str);
 void	test_is(int(*f)(int c), char *str);
 void	test_isnt(int(*f)(int c), char *str);
 
+
+/*
+** test to framework
+*/
+
+void	test_to(int(*f)(int c), char *ft, char *to);
+void	check_to(int(*f)(int c), char *str);
+
+
 /*
 ** TEST
 */
@@ -47,4 +56,7 @@ void	ut_isdigit(void);
 void	ut_isalnum(void);
 void	ut_isascii(void);
 void	ut_isaprint(void);
+void	ut_islower(void);
+void	ut_istupper(void);
+void	ut_toupper(void);
 #endif

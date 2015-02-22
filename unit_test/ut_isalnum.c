@@ -1,4 +1,4 @@
-#include <test.h>
+#include "test.h"
 
 void	ut_isalnum(void)
 {
@@ -9,5 +9,5 @@ void	ut_isalnum(void)
 	check_isnt(isalnum, isnt);
 	NAME_UT("Test ft_isalnum");
 	test_is(ft_isalnum, is);
-	test_is(ft_isalnum, isnt);
+	test_isnt(ft_isalnum, isnt);
 }

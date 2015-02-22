@@ -9,5 +9,5 @@ void	ut_isascii(void)
 	check_isnt(isascii, isnt);
 	NAME_UT("Test ft_isascii");
 	test_is(ft_isascii, is);
-	test_is(ft_isascii, isnt);
+	test_isnt(ft_isascii, isnt);
 }

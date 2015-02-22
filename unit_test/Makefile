@@ -1,8 +1,6 @@
-SRC=	ut_bzero.c\
+SRC=	ut_*.c\
 	test_is.c\
- 	ut_strcat.c\
-	ut_isdigit.c\
-	ut_isalpha.c
+	test_to.c
 
 all:
 	gcc main.c $(SRC) test.h -I ../includes  -L ../ -lfts -o test

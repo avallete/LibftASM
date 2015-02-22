@@ -18,5 +18,11 @@ int main(void)
 	ut_strcat();
 	ut_isdigit();
 	ut_isalpha();
+	ut_isascii();
+	ut_isalnum();
+	ut_isprint();
+	ut_isupper();
+	ut_islower();
+	ut_toupper();
 	return (0);
 }
