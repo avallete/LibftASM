@@ -59,4 +59,5 @@ void	ut_isaprint(void);
 void	ut_islower(void);
 void	ut_istupper(void);
 void	ut_toupper(void);
+void	ut_tolower(void);
 #endif

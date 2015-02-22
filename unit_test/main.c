@@ -24,5 +24,6 @@ int main(void)
 	ut_isupper();
 	ut_islower();
 	ut_toupper();
+	ut_tolower();
 	return (0);
 }
