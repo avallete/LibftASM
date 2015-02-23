@@ -1,33 +1,23 @@
 section	.text
-	global	ft_memcpy
+	global	ft_memcpy		;void *memcpy(void *dst, void *src, size_t n)
 
 ft_memcpy:
-	push	rdi				;save ptr of args 1
-	push	rsi				;// 2
-	push	rdx				;// 3
-	mov	rax,	rdi			;return rdi ptr
-	cmp	rdx,	0			;cmp size to 0
+	push	rdi				;save void *dst addr
+	push	rsi				;save void *src addr
+	cmp	rdx,	0			;cmp size n to 0
 	jle	exit				;if lower or egual exit
-	cmp	rdi,	0			;check if ptr is NULL
+	cmp	rdi,	0			;check if ptr dst is NULL
 	je	exit				;if it is exit
-	cmp	rsi,	0			;check if ptr is NULL
+	cmp	rsi,	0			;check if ptr src is NULL
 	je	exit				;if it is exit
+	mov	rcx,	rdx			;copy size in cmpt for stosb
+	cld						;init incrementation
 
 fill_rdi:
-	cmp	rdx,	0			;check if size is 0
-	jg	filler				;if is greater fill it
-	jmp	exit
-
-filler:
-	mov	r8,	[rsi]			;copy *s2 in tmp
-	mov	[rdi],	r8			;copy tmp in *s
-	inc	rdi				;s[i++]
-	inc	rsi				;s2[i++]
-	dec	rdx				;size--
-	jmp	fill_rdi			;re do while
+	rep	movsb				;copy rsi in rdi while rcx > 0
 
 exit:
-	pop	rdx
-	pop	rsi
-	pop	rdi
+	pop	rsi					;restaur void *src addr
+	pop	rdi					;restaure vois *addr
+	mov	rax,	rdi			;return = s
 	ret

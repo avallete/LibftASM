@@ -2,7 +2,6 @@ section	.text
 	global	ft_strlen
 
 ft_strlen:
-	push			rcx					;save rcx adress
 	push			rdi					;save rdi adress
 	mov	rax,		0					;set return to 0
 	cmp	rdi,		0					;check if str is NULL
@@ -18,6 +17,5 @@ compt_size:
 	mov		rax,	rcx					;give rcx cmptr in value of return
 
 exit:
-	pop	rcx				;restaur rcx value
 	pop	rdi				;restaur rdi addr
 	ret					;return
