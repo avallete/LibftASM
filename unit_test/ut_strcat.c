@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 17:20:58 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/20 17:29:39 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/23 17:42:29 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,6 @@ void	ut_strcat(void)
 		OK;
 	TEST("ft_strcat(NULL, NULL)"), ft_strcat(NULL, NULL);
 		OK;
+	TEST("ft_strcat(str1, 'aaaaaaaaaaaaaaaaaaaaaaa')"), ft_strcat(str1, "aaaaaaaaaaaaaaaaaaaaaaa");
+	test_it(str1, "BonjOuraaaaaaaaaaaaaaaaaaaaaaa");
 }
