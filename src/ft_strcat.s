@@ -8,29 +8,21 @@ ft_strcat:
 	je		exit					;if egual null exit
 	cmp		rsi,		0			;check if second arg is NULL
 	je		exit					;if egual null exit
-
-goend:
-	cmp		byte[rdi],	0
-	je		copyrdi
-
-incrdi:
-	inc		rdi
-	jmp		goend
+	mov		al,			0			;init scasb cmp to 0
+	repne	scasb					;go to s1 end
+	dec		rdi						;rdi--
 
 copyrdi:
 	cmp		byte [rsi],	0			;check if we are \0 is rdi (s2)
-	jne		rditorsi				;if is not \0 copy s2 in s1 and inc
-	mov		byte [rdi],	0			;if	it is \0 stop copy and add \0 in s1
-	jmp		exit					;go end of exit
+	je		end						;go end of exit
+	movsb							;copy rsi in rdi and inc
+	jmp		copyrdi					;re do
 
-rditorsi:
-	mov		rax,	[rsi]				;copy char s2 to rax tmp
-	mov		[rdi],	rax				;copy char s2 to rax tmp
-	inc		rsi						;s2++
-	inc		rdi						;s1++
-	jmp		copyrdi					;jump begin while
+end:
+	mov		rdi,	0
 
 exit:
 	pop		rsi
 	pop		rdi
+	mov		rax,	rdi
 	ret

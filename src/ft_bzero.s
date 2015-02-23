@@ -1,21 +1,15 @@
 section .text
-	global ft_bzero
+	global ft_bzero			;void	ft_bzero(void *s, size_t n);
 
 ft_bzero:
-	push	rsi				;save value rsi for calling convetion
-	push	rdi				;save value rdi for calling convetion
+	push	rdi				;save value rdi addr
 	cmp		rdi,		0	;compare if ptr is NULL
-	je		exit
-
-while:
-	cmp		rsi,		0	;compare size at 0
-	je		exit			;if eg ret
-	mov		byte [rdi],	0	;else do s[i] = 0
-	dec		rsi				;decrement size
-	inc		rdi				;increment str pointer
-	jmp		while			;continue while
+	je		exit			;if is NULL exit
+	mov		rcx,	rsi		;set size in rcx for stosb cmpt
+	mov		rax,	0		;set rax to 0 fot stosb fill
+	cld						;init inc
+	rep		stosb			;while rcx > 0 fill rdi with rax
 
 exit:
 	pop		rdi				;restore rdi value
-	pop		rsi				;restore rsi value
 	ret
