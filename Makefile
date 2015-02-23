@@ -6,7 +6,7 @@
 #    By: avallete <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/18 13:18:20 by avallete          #+#    #+#              #
-#    Updated: 2015/02/20 18:13:14 by avallete         ###   ########.fr        #
+#    Updated: 2015/02/23 10:33:38 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ=$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INCF=$(addprefix $(INC_PATH), $(INC_NAME))
 INC=$(addprefix -I, $(INC_PATH))
-CC=nasm
+CC=~/.brew/bin/nasm
 OSNAME:=`uname`
 NFLAGS=
 LNKFLAGS=
@@ -45,10 +45,10 @@ CYAN=\033[36m
 ORANGE=\033[33m
 NC=\033[0m
 #ifeq ($(OSNAME), Linux)
-	NFLAGS=-f elf64
+#	NFLAGS=-f elf64
 #else
-#	NFLAGS=-f macho64 --prefix _
-#	LNKFLAGS= -macosx_version_min 10.8 -lSystem
+	NFLAGS=-f macho64 --prefix _
+	LNKFLAGS= -macosx_version_min 10.8 -lSystem
 #endif
 all: $(NAME)
 
