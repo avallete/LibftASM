@@ -2,7 +2,7 @@
 %define	WRITE				4
 
 section	.text
-	global	ft_putsfd						;int	ft_putsfd(int fd, const char *s)
+	global	ft_putsfd								;int	ft_putsfd(int fd, const char *s)
 	extern	ft_strlen
 
 ft_putsfd:
@@ -10,10 +10,12 @@ ft_putsfd:
 	push	rsi										;save rsi addr
 	push	rdx										;save rdx addr
 	mov		rax,	-1								;init return at err
+	cmp		rdi,	0								;check if fd error
+	jl		exit									;if it is exit
 	cmp		rsi,	0								;check if addr *s is inval
 	jle		exit									;if it is exit
-	cmp		rdi,	0								;check if fd error
-	jle		exit									;if it is exit
+
+write:
 	mov		rdx,	rdi								;save fd
 	mov		rdi,	rsi								;move *s in rsi for ft_strlen
 	call	ft_strlen								;grep *s size

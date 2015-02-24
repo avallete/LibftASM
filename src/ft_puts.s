@@ -3,7 +3,7 @@
 %define	WRITE				4
 
 section	.text
-	global	ft_puts						;int	ft_puts(const char *s)
+	global	ft_puts									;int	ft_puts(const char *s)
 	extern	ft_strlen
 
 ft_puts:

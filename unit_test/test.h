@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/20 17:18:44 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/24 12:20:30 by avallete         ###   ########.fr       */
+/*   Created: 2015/02/24 14:48:43 by avallete          #+#    #+#             */
+/*   Updated: 2015/02/24 17:07:00 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define TEST_H
 #include "libftasm.h"
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
 #define CYAN printf("\e[36m")
@@ -58,10 +61,12 @@ void	ut_isascii(void);
 void	ut_isaprint(void);
 void	ut_islower(void);
 void	ut_istupper(void);
+void	ut_put(void);
 void	ut_toupper(void);
 void	ut_tolower(void);
 void	ut_strlen(void);
 void	ut_memset(void);
 void	ut_memcpy(void);
 void	ut_puts(void);
+void	ut_strdup(void);
 #endif

@@ -6,7 +6,8 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/19 16:52:20 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/24 12:20:44 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/24 17:06:44 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:33:27 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +30,6 @@ int main(void)
 	ut_strlen();
 	ut_memset();
 	ut_memcpy();
+	ut_strdup();
 	return (0);
 }
