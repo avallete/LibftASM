@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 17:18:44 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/20 18:51:06 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:33:11 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	ut_isascii(void);
 void	ut_isaprint(void);
 void	ut_islower(void);
 void	ut_istupper(void);
+void	ut_put(void);
 void	ut_toupper(void);
 void	ut_tolower(void);
 void	ut_strlen(void);

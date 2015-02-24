@@ -6,7 +6,7 @@
 #    By: avallete <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/18 13:18:20 by avallete          #+#    #+#              #
-#    Updated: 2015/02/23 10:33:38 by avallete         ###   ########.fr        #
+#    Updated: 2015/02/24 10:35:25 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC_NAME:=	ft_bzero.s\
 		ft_islower.s\
 		ft_toupper.s\
 		ft_tolower.s\
+		ft_puts.s\
 		ft_strlen.s\
 		ft_memset.s\
 		ft_memcpy.s\

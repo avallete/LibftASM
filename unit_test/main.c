@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/19 16:52:20 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/20 18:51:08 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:33:27 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main(void)
 	ut_islower();
 	ut_toupper();
 	ut_tolower();
+	ut_put();
 	ut_strlen();
 	ut_memset();
 	ut_memcpy();
