@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 17:18:44 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/20 18:51:06 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/24 12:20:30 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ void	ut_tolower(void);
 void	ut_strlen(void);
 void	ut_memset(void);
 void	ut_memcpy(void);
+void	ut_puts(void);
 #endif
