@@ -8,9 +8,18 @@ void	ut_strdup(void)
 	NAME_UT("Test ft_strdup");
 	str2 = NULL;
 	str2 = ft_strdup(str1);
-	printf("STR1 := %s\n", str1);
-	printf("STR2 := %s\n", str2);
+	if (!(strcmp(str2, str1)))
+		OK;
+	else
+		FAIL("First test, loooser !");
 	str1[2] = 'o';
-	printf("STR1 := %s\n", str1);
-	printf("STR2 := %s\n", str2);
+	if ((strcmp(str2, str1)))
+		OK;
+	else
+		FAIL("You srx ? You just return the *s ptr idiot !!!");
+	str2 = ft_strdup(NULL);
+	if (!(str2))
+		OK;
+	else
+		FAIL("You strdup a NULL str ??");
 }
