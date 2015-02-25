@@ -19,16 +19,17 @@ ft_cat:
 	syscall								;call read
 	jc		end							;if error return
 	cmp		rax,	0					;chek if read is end
-	jg		print						;write buf
+	je		end							;if read ret = 0, exit
 
 print:
 	mov		rdi,	STDOUT				;init rdi at STDOUT for write
 	mov		rdx,	rax					;take read return
 	mov		rax,	SYSC(WRITE)			;call write
 	syscall
-	pop		rdi							;retaur rdi addr
 	jc		end							;if error exit
+	pop		rdi							;restaure fd in rdi value
 	jmp		ft_cat						;loop
 
 end:
+	pop		rdi							;restaure rdi
 	ret
