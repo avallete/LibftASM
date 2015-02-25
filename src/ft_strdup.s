@@ -17,10 +17,13 @@ dup:
 	mov		rdi,	rdx					;move size in rdi for malloc;
 	push		rdx						;save rdx (malloc is a bastard modify reg and no restore them)
 	call		malloc						;call malloc so now rax is mallocated ptr;
+	jnc		copy						;if malloc is OK
+	pop		rdx						;else pop rdx
+	jmp		error						;return err
+
+copy:
 	mov		rdi,	rax					;mov malloc ptr in rdi for ft_memcpy;
 	pop		rdx						;restore size of str for memcpy
-	cmp		rdi,	0					;check if malloc succed
-	je		error						;else go err
 	pop		rsi						;pop rsi so, rdi take place in rsi for memcpy
 	call		ft_memcpy					;call memcpy (cpy str, init rax...)
 
@@ -28,5 +31,6 @@ exit:
 	ret
 
 error:
+	mov	rax,	0					;init return at NULL
 	pop	rdi
 	ret
