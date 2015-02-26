@@ -70,5 +70,7 @@ void	ut_memcpy(void);
 void	ut_puts(void);
 void	ut_strdup(void);
 void	ut_strclr(void);
+void	ut_strnew(void);
 void	ut_memalloc(void);
+void	ut_putchar(void);
 #endif

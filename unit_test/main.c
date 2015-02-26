@@ -34,5 +34,7 @@ int main(void)
 	ut_strclr();
 	ut_cat();
 	ut_memalloc();
+	ut_strnew();
+	ut_putchar();
 	return (0);
 }
