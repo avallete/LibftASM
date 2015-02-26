@@ -31,5 +31,8 @@ int main(void)
 	ut_memset();
 	ut_memcpy();
 	ut_strdup();
+	ut_strclr();
+	ut_cat();
+	ut_memalloc();
 	return (0);
 }

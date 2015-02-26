@@ -7,13 +7,7 @@ void	ut_cat(void)
 	int fd3;
 
 	NAME_UT("Test ft_cat");
-	fd2 = open("sandbox", O_RDONLY);
-	fd = open("./catfiles/test1", O_RDONLY);
-	fd3 = open("./catfiles/test", O_RDONLY);
-	TEST("Easy 'sandbox' : \n");
+	fd2 = open("test.h", O_RDONLY);
 	ft_cat(fd2);
-	TEST("\nHardie 'test1'\n");
-	ft_cat(fd);
-	TEST("\nHard 'test'\n");
-	ft_cat(fd3);
+	ft_cat(-1);
 }
