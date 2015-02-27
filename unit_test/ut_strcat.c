@@ -38,6 +38,8 @@ void	ut_strcat(void)
 	test_it(ft_strcat(str1, ""), "BonjOur");
 	TEST("ft_strcat(NULL, 'Our')"), ft_strcat(NULL, "Our");
 		OK;
+	TEST("ft_strcat('Our', NULL)"), ft_strcat("Our", NULL);
+		OK;
 	TEST("ft_strcat(NULL, NULL)"), ft_strcat(NULL, NULL);
 		OK;
 	TEST("ft_strcat(str1, 'aaaaaaaaaaaaaaaaaaaaaaa')"), ft_strcat(str1, "aaaaaaaaaaaaaaaaaaaaaaa");
