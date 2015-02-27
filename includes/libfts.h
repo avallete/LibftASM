@@ -1,7 +1,20 @@
-#ifndef LIBFTASM_H
-# define LIBFTASM_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libfts.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/02/27 18:16:59 by avallete          #+#    #+#             */
+/*   Updated: 2015/02/27 18:18:15 by avallete         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef LIBFTS_H
+# define LIBFTS_H
 # include <unistd.h>
 # include <stdlib.h>
+
 void	ft_bzero(void *s, size_t n);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strnew(size_t size);
