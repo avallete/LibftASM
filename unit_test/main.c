@@ -17,13 +17,11 @@ int main(void)
 {
 	ut_bzero();
 	ut_strcat();
-	ut_isdigit();
 	ut_isalpha();
-	ut_isascii();
+	ut_isdigit();
 	ut_isalnum();
+	ut_isascii();
 	ut_isprint();
-	ut_isupper();
-	ut_islower();
 	ut_toupper();
 	ut_tolower();
 	ut_puts();
@@ -31,10 +29,15 @@ int main(void)
 	ut_memset();
 	ut_memcpy();
 	ut_strdup();
-	ut_strclr();
 	ut_cat();
-	ut_memalloc();
-	ut_strnew();
+	NAME_UT("TEST DES FONCTIONS BONUS");
+	ut_putserr();
+	ut_putsfd();
 	ut_putchar();
+	ut_memalloc();
+	ut_strclr();
+	ut_strnew();
+	ut_isupper();
+	ut_islower();
 	return (0);
 }

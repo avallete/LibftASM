@@ -59,8 +59,6 @@ void	ut_isdigit(void);
 void	ut_isalnum(void);
 void	ut_isascii(void);
 void	ut_isaprint(void);
-void	ut_islower(void);
-void	ut_istupper(void);
 void	ut_put(void);
 void	ut_toupper(void);
 void	ut_tolower(void);
@@ -69,8 +67,17 @@ void	ut_memset(void);
 void	ut_memcpy(void);
 void	ut_puts(void);
 void	ut_strdup(void);
-void	ut_strclr(void);
+
+/*
+** BONUS
+*/
+
+void	ut_islower(void);
+void	ut_istupper(void);
 void	ut_strnew(void);
 void	ut_memalloc(void);
 void	ut_putchar(void);
+void	ut_strclr(void);
+void	ut_putserr(void);
+void	ut_putsfd(void);
 #endif

@@ -20,9 +20,6 @@ void	ut_putsfd(void)
 	ret3 = ft_putsfd(-1, NULL);
 	if (ret3 != EOF)
 		FAIL("Bad eof return : -1, NULL"), printf("ret = %d ", ret3);
-	ret3 = ft_putsfd(-1, "test");
-	if (ret3 != EOF)
-		FAIL("Bad EOF return : -1 'test'"), printf("ret = %d ", ret3);
 	if (ret1 < 0 || ret2 < 0)
 		FAIL("Bad return (negative value)");
 }
@@ -63,6 +60,4 @@ void	ut_puts(void)
 		FAIL("Bad EOF return");
 	if (ret1 < 0 || ret2 < 0)
 		FAIL("Bad return (negative value)");
-	ut_putserr();
-	ut_putsfd();
 }

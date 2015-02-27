@@ -46,21 +46,15 @@ INCF=$(addprefix $(INC_PATH), $(INC_NAME))
 INC=$(addprefix -I, $(INC_PATH))
 CC=~/.brew/bin/nasm
 OSNAME:=`uname`
-NFLAGS=
-LNKFLAGS=
-SRC_TEST=./test.c
 NAME=libfts.a
 RED=\033[30;41m
 GREEN=\033[32m
 CYAN=\033[36m
 ORANGE=\033[33m
 NC=\033[0m
-#ifeq ($(OSNAME), Linux)
-#	NFLAGS=-f elf64
-#else
-	NFLAGS=-f macho64 --prefix _
-	LNKFLAGS= -macosx_version_min 10.8 -lSystem
-#endif
+NFLAGS=-f macho64 --prefix _
+LNKFLAGS= -macosx_version_min 10.8 -lSystem
+
 all: $(NAME)
 
 $(NAME):$(OBJ)
