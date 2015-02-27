@@ -2,9 +2,7 @@
 
 void	ut_cat(void)
 {
-	int fd;
 	int fd2;
-	int fd3;
 
 	NAME_UT("Test ft_cat");
 	fd2 = open("test.h", O_RDONLY);

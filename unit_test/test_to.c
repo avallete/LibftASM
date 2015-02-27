@@ -15,15 +15,11 @@ void	check_to(int(*f)(int c), char *str)
 	}
 }
 
-void	test_to(int(*f)(int c), char *ft, char *to)
+void	test_to(char *ft, char *to)
 {
-	int i;
 	int ret;
-	int foo;
 
-	i = 0;
 	ret = 0;
-	foo = 0;
 	ret = strcmp(ft, to);
 	if (ret != 0)
 		FAIL(ft), printf("real result = %s\n", to);

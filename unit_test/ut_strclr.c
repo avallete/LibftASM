@@ -15,7 +15,7 @@ void	ut_strclr(void)
 	while (i < len)
 	{
 		if (str[i] != '\0')
-			err == 1;
+			err = 1;
 		i++;
 	}
 	if (!err)

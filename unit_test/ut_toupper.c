@@ -8,5 +8,5 @@ void	ut_toupper(void)
 	check_to(toupper, to);
 	check_to(ft_toupper, ft);
 	NAME_UT("Test ft_toupper");
-	test_to(ft_toupper, ft, to);
+	test_to(ft, to);
 }

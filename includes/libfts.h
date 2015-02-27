@@ -24,4 +24,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memalloc(size_t n);
 char	*ft_strdup(const char *s);
 void	ft_strclr(char *s);
+void	ft_cat(int fd);
 #endif

@@ -39,7 +39,7 @@ SRC_NAME:=	ft_bzero.s\
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.s=.o)
 INC_PATH=./includes/
-INC_NAME=libftasm.h
+INC_NAME=libfts.h
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ=$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INCF=$(addprefix $(INC_PATH), $(INC_NAME))

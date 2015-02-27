@@ -8,5 +8,5 @@ void	ut_tolower(void)
 	check_to(tolower, to);
 	check_to(ft_tolower, ft);
 	NAME_UT("Test ft_tolower");
-	test_to(ft_tolower, ft, to);
+	test_to(ft, to);
 }

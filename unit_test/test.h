@@ -12,7 +12,7 @@
 
 #ifndef TEST_H
 # define TEST_H
-#include "libftasm.h"
+#include "libfts.h"
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -44,7 +44,7 @@ void	test_isnt(int(*f)(int c), char *str);
 ** test to framework
 */
 
-void	test_to(int(*f)(int c), char *ft, char *to);
+void	test_to(char *ft, char *to);
 void	check_to(int(*f)(int c), char *str);
 
 
@@ -67,13 +67,15 @@ void	ut_memset(void);
 void	ut_memcpy(void);
 void	ut_puts(void);
 void	ut_strdup(void);
+void	ut_cat(void);
+void	ut_isprint(void);
 
 /*
 ** BONUS
 */
 
 void	ut_islower(void);
-void	ut_istupper(void);
+void	ut_isupper(void);
 void	ut_strnew(void);
 void	ut_memalloc(void);
 void	ut_putchar(void);

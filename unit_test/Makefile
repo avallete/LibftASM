@@ -25,10 +25,10 @@ SRCBONUS=ut_islower.c\
 
 all:
 	make re -C ../
-	gcc main.c $(SRC) $(SRCBONUS) test.h -I ../includes  -L ../ -lfts -o test\
+	gcc -Wall -Wextra -Werror main.c $(SRC) $(SRCBONUS) test.h  -I ../includes/ -L ../ -lfts
 
 fclean:
-	rm -rf test
+	rm -rf a.out
 
 re: fclean all
 
