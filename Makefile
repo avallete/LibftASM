@@ -30,6 +30,11 @@ SRC_NAME:=	ft_bzero.s\
 		ft_putserr.s\
 		ft_putsfd.s\
 		ft_strdup.s\
+		ft_cat.s\
+		ft_memalloc.s\
+		ft_putchar.s\
+		ft_strclr.s\
+		ft_strnew.s\
 		ft_isalpha.s
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.s=.o)

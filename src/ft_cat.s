@@ -9,26 +9,26 @@ section	.data
 		.string	times BUF_SIZE + 1 db 0
 
 section	.text
-	global	ft_cat						;void	ft_cat(int	fd)
+	global	ft_cat								;void	ft_cat(int	fd)
 
 ft_cat:
-	push	rdi							;save rdi add (keep fd)
-	lea		rsi,	[rel buf.string]	;charge buf in rsi for read
-	mov		rdx,	BUF_SIZE			;mov BUF_SIZE in rdx for read
-	mov		rax,	SYSC(READ)			;syscall read
-	syscall								;call read
+	push	rdi								;save rdi add (keep fd)
+	lea		rsi,	[rel buf.string]				;charge buf in rsi for read
+	mov		rdx,	BUF_SIZE					;mov BUF_SIZE in rdx for read
+	mov		rax,	SYSC(READ)					;syscall read
+	syscall									;call read
 	jc		end							;if error return
-	cmp		rax,	0					;chek if read is end
+	cmp		rax,	0						;chek if read is end
 	je		end							;if read ret = 0, exit
 
 print:
-	mov		rdi,	STDOUT				;init rdi at STDOUT for write
-	mov		rdx,	rax					;take read return
-	mov		rax,	SYSC(WRITE)			;call write
+	mov		rdi,	STDOUT						;init rdi at STDOUT for write
+	mov		rdx,	rax						;take read return
+	mov		rax,	SYSC(WRITE)					;call write
 	syscall
 	jc		end							;if error exit
 	pop		rdi							;restaure fd in rdi value
-	jmp		ft_cat						;loop
+	jmp		ft_cat							;loop
 
 end:
 	pop		rdi							;restaure rdi
