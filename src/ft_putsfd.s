@@ -11,7 +11,7 @@ ft_putsfd:
 	push	rdx										;save rdx addr
 	mov		rax,	0								;init return at err
 	cmp		rdi,	0								;check if fd error
-	jl		exit									;if it is exit
+	jl		error									;if it is exit
 	cmp		rsi,	0								;check if addr *s is inval
 	jle		exit									;if it is exit
 
