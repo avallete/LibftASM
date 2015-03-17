@@ -8,9 +8,9 @@ ft_strcat:
 	push		rdi					;save addr of first arg
 	push		rsi					;save addr of second arg
 	cmp		rdi,		0			;check if first arg is NULL
-	je		exit					;if egual null exit
+	je		error					;if egual null exit
 	cmp		rsi,		0			;check if second arg is NULL
-	je		exit					;if egual null exit
+	je		error					;if egual null exit
 	call	ft_strlen				;take rdi size
 	mov		r12,		rax			;save s1 val
 	mov		rdi,	rsi				;mov rsi in rdi for strlen s2
@@ -28,4 +28,11 @@ ft_strcat:
 
 exit:
 	mov		rax,	rdi				;return s1 addr
+	ret
+
+error:
+	mov		rax, 0
+	pop		rsi
+	pop		rdi
+	pop		r12
 	ret
