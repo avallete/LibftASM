@@ -11,26 +11,24 @@ ft_strdup:
 	je		error						;if it is, return;
 
 dup:
-	call		ft_strlen					;call ft_strlen (len is in rax now);
-	inc		rax						;add 1 at rax for last \0;
-	mov		rdx,	rax					;cp rax to rdx for save size;
-	mov		rdi,	rdx					;move size in rdi for malloc;
-	push		rdx						;save rdx (malloc is a bastard modify reg and no restore them)
-	call		malloc						;call malloc so now rax is mallocated ptr;
-	jnc		copy						;if malloc is OK
-	pop		rdx						;else pop rdx
+	call	ft_strlen					;call ft_strlen (len is in rax now);
+	inc		rax							;add 1 at rax for last \0;
+	mov		r12,	rax					;cp rax to rdx for save size;
+	mov		rdi,	r12					;move size in rdi for malloc;
+	call	malloc						;call malloc so now rax is mallocated ptr;
+	jnc		copy						;if malloc is O;
 	jmp		error						;return err
 
 copy:
 	mov		rdi,	rax					;mov malloc ptr in rdi for ft_memcpy;
-	pop		rdx						;restore size of str for memcpy
-	pop		rsi						;pop rsi so, rdi take place in rsi for memcpy
-	call		ft_memcpy					;call memcpy (cpy str, init rax...)
+	pop		rsi							;mov *s in rsi for memcpy
+	mov		rdx,	r12					;restore size in rdx
+	call	ft_memcpy					;call memcpy (cpy str, init rax...)
 
 exit:
 	ret
 
 error:
-	mov	rax,	0					;init return at NULL
 	pop	rdi
-	ret
+	mov	rax,	0					;init return at NULL
+	jmp	exit

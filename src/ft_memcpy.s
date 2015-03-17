@@ -17,7 +17,6 @@ fill_rdi:
 	rep	movsb				;copy rsi in rdi while rcx > 0
 
 exit:
-	pop	rsi					;restaur void *src addr
-	pop	rdi					;restaure vois *addr
-	mov	rax,	rdi			;return = s
+	pop	rsi
+	pop	rax					;pop rax return;
 	ret

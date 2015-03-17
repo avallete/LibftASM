@@ -1,28 +1,31 @@
 section	.text
 	global	ft_strcat
+	extern	ft_strlen
+	extern	ft_memcpy
 
 ft_strcat:
+	push		r12					;save r12 addr
 	push		rdi					;save addr of first arg
 	push		rsi					;save addr of second arg
 	cmp		rdi,		0			;check if first arg is NULL
 	je		exit					;if egual null exit
 	cmp		rsi,		0			;check if second arg is NULL
 	je		exit					;if egual null exit
-	mov		al,			0		;init scasb cmp to 0
-	repne		scasb					;go to s1 end
-	dec		rdi					;rdi--
-
-copyrdi:
-	cmp		byte [rsi],	0			;check if we are \0 is rdi (s2)
-	je		end					;go end of exit
-	movsb							;copy rsi in rdi and inc
-	jmp		copyrdi					;re do
-
-end:
-	movsb							;add last \0
+	call	ft_strlen				;take rdi size
+	mov		r12,		rax			;save s1 val
+	mov		rdi,	rsi				;mov rsi in rdi for strlen s2
+	call	ft_strlen				;call ft_strlen
+	inc		rax						;inc strlen return (for \0)
+	mov		rdx,	rax				;mov len value in rdx for memcpy
+	pop		rsi						;restaur original rsi addr
+	pop		rdi						;restaur original rdi addr
+	mov		rax,	rdi				;return rdi basic addr
+	push	rdi						;save rdi addr
+	add		rdi,	r12				;inc rdi of strlen s1
+	call	ft_memcpy				;copy s2 in s1
+	pop		rdi						;restaur rdi addr
+	pop		r12						;restaur r12 addr
 
 exit:
-	pop		rsi
-	pop		rdi
-	mov		rax,	rdi				;return ptr
+	mov		rax,	rdi				;return s1 addr
 	ret
