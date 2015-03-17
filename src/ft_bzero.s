@@ -11,5 +11,5 @@ ft_bzero:
 	rep		stosb			;while rcx > 0 fill rdi with rax
 
 exit:
-	pop		rdi				;restore rdi value
+	pop		rax				;restore rdi value
 	ret
